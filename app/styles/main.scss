@@ -1,3 +1,75 @@
 // bower:scss
 // endbower
 
+body {
+    font-family: 'Karla', sans-serif;
+    margin: 0 0 0 0;
+}
+
+.header {
+    margin-top: 25px;
+    margin-bottom: 80px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.container {
+    margin-left: 350px;
+    width: 600px;
+    height: 500px;
+}
+
+.put {
+    margin-left: 350px;
+    width: 600px;
+    height: 80px;
+} 
+
+.submit-task {
+    display: inline-block;
+    width: 60px;
+    height: 20px;
+    border-radius: 20px;
+    color: blue;
+    background-color: green;
+}
+
+.task-input {
+    display: inline-block;
+    width: 520px;
+}
+
+.button {
+    display: inline-block;
+    margin-right: 10px;
+    width: 70px;
+    height: 20px;
+    color: blue;
+    background-color: green;
+    border-radius: 20px;
+}
+
+.style-task {
+    margin-bottom: 20px;
+}
+
+.task {
+    display: inline-block;
+}
+
+.edit-task {
+    display: inline-block;
+    float: right;
+    text-align: center;
+}
+
+.remove-task {
+    float: right;
+    display: inline-block;
+    text-align: center;
+}
+
+
+
+
+
