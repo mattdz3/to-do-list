@@ -24,31 +24,33 @@
         <![endif]-->
 
 
-        <div class="header">Wat Do?</div>
-
-        <div class="put">
-            <button class="submit-task">ADD</button>
-            <input class="task-input"></input>  
-        </div>
+        <div class="header">To Do List</div>
 
         <div class="container">
-
+            <div class="put">
+                <button class="submit-task">ADD</button>
+                <input class="task-input"></input>  
+            </div>
         </div>
+        <div class="footer"></div>
 
             <script type="text/template" class="to-do-list">
                 <div class="style-task">
                     <div class="task"><%= task %></div>
-                    <div class="button remove-task">DELETE</div>
-                    <div class="button edit-task">EDIT</div>
+                    <button class="button remove-task">DELETE</button>
+                    <button class="button edit-task">EDIT</button>
                     
                 </div>
             </script>
 
             <script type="text/template" class="to-do-list-edit">
                 <div class="task"><input type="text" value='<%= task %>'</div>
-                <div class="button edit-task">EDIT</div>
-                <div class="button remove-task">DELETE</div>
+                <button class="button remove-task">DELETE</button>
+                <button class="button edit-task">DONE</button>
+                
             </script>
+
+            <script type="text/template" class="add-task"></script>
 
 
 

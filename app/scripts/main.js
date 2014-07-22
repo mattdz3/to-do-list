@@ -19,8 +19,10 @@ ToDoCollection = Backbone.Collection.extend({
 ToDoView = Backbone.View.extend({
 
 	template: _.template($('.to-do-list').text()),
+	addTemplate: _.template($('.add-task').text()),
 	editTemplate: _.template($('.to-do-list-edit').text()),
 
+//events only work in this.el
 	events: {
 		"click .submit-task" : "addTask",
 		"click .edit-task" : "editTask",
@@ -39,10 +41,13 @@ ToDoView = Backbone.View.extend({
 	},
 
 	addTask: function(){
-		var add = $('.task-input').val();
-		$('.task-input').val('');
-		render(add);
+		var newTask = myCollection.add({})
+		
+		new ToDoView({})
 
+		//XYZ.add({task: 'go home'})
+		
+		//you dumb add this to collection todocollection.add({name: inputval})
 	},
 
 	editTask: function() {
@@ -50,7 +55,7 @@ ToDoView = Backbone.View.extend({
 		this.$el.html(renderTemp);
 	},
 
-	deleteTask: function() {++
+	deleteTask: function() {
 		this.model.destroy();
 		this.remove();
 	},
