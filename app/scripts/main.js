@@ -21,7 +21,6 @@ ToDoView = Backbone.View.extend({
 	className: "all-the-tasks",
 
 	template: _.template($('.to-do-list').text()),
-	addTemplate: _.template($('.add-task').text()),
 	editTemplate: _.template($('.to-do-list-edit').text()),
 
 //events only work in this.el
