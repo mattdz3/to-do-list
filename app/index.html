@@ -36,7 +36,9 @@
 
             <script type="text/template" class="to-do-list">
                 <div class="style-task">
+
                     <div class="task"><%= task %></div>
+
                     <button class="button remove-task">DELETE</button>
                     <button class="button edit-task">EDIT</button>
                     
@@ -44,9 +46,12 @@
             </script>
 
             <script type="text/template" class="to-do-list-edit">
-                <div class="task"><input type="text" value='<%= task %>'</div>
-                <button class="button remove-task">DELETE</button>
-                <button class="button edit-task">DONE</button>
+
+                <div class="task">
+                <input class="finished-edit-input" type="text" value='<%= task %>'>
+                
+                
+                <button class="button finished-edit">DONE</button></div>
                 
             </script>
 

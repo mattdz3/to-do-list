@@ -46,6 +46,11 @@ body {
     width: 520px;
 }
 
+.all-the-tasks {
+    display: inline-block;
+    width: 100%
+}
+
 .button {
     display: inline-block;
     border: 0px;
@@ -72,6 +77,15 @@ body {
     display: inline-block;
     float: right;
     text-align: center;
+}
+
+.finished-edit {
+    float: right;
+}
+
+.finished-edit-input {
+    display: inline-block;
+    height: 20px;
 }
 
 .remove-task {

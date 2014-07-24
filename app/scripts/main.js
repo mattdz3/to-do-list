@@ -18,18 +18,21 @@ ToDoCollection = Backbone.Collection.extend({
 
 ToDoView = Backbone.View.extend({
 
+	className: "all-the-tasks",
+
 	template: _.template($('.to-do-list').text()),
 	addTemplate: _.template($('.add-task').text()),
 	editTemplate: _.template($('.to-do-list-edit').text()),
 
 //events only work in this.el
 	events: {
-		"click .submit-task" : "addTask",
-		"click .edit-task" : "editTask",
-		"click .remove-task" : "deleteTask",
+		"click .edit-task"     : "editTask",
+		"click .finished-edit" : "finishedEdit",
+		"click .remove-task"   : "deleteTask",
 	},
 
 	initialize: function() {
+		console.log(this)
 		this.listenTo(this.model, 'change', this.render),
 		$('.container').append(this.el)
 		this.render();
@@ -40,18 +43,15 @@ ToDoView = Backbone.View.extend({
 		this.$el.html(renderTemp);
 	},
 
-	addTask: function(){
-		var newTask = myCollection.add({})
-		
-		new ToDoView({})
-
-		//XYZ.add({task: 'go home'})
-		
-		//you dumb add this to collection todocollection.add({name: inputval})
-	},
-
 	editTask: function() {
 		var renderTemp = this.editTemplate(this.model.attributes)
+		this.$el.html(renderTemp);
+	},
+
+	finishedEdit: function() {
+		
+		$('.finished-edit-input').val()
+		var renderTemp = this.template(this.model.attributes)
 		this.$el.html(renderTemp);
 	},
 
@@ -64,12 +64,21 @@ ToDoView = Backbone.View.extend({
 var toDoTasks = new ToDoCollection();
 
 toDoTasks.fetch().done(function() {
+	console.log(toDoTasks)
 	toDoTasks.each(function(task) {
 		new ToDoView({model: task});
 	})
 });
 
+$('.submit-task').click(function() {
+	console.log("hey")
+	var newTask = new ToDoCollection;
 
+	var name = $('.task-input').val()
+	
+	newTask.create({task: name})
+	new ToDoView();
+})
 
 
 
