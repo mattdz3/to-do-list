@@ -23,7 +23,6 @@ ToDoView = Backbone.View.extend({
 	template: _.template($('.to-do-list').text()),
 	editTemplate: _.template($('.to-do-list-edit').text()),
 
-//events only work in this.el
 	events: {
 		"click .edit-task"     : "editTask",
 		"click .finished-edit" : "finishedEdit",
@@ -63,20 +62,19 @@ ToDoView = Backbone.View.extend({
 var toDoTasks = new ToDoCollection();
 
 toDoTasks.fetch().done(function() {
-	console.log(toDoTasks)
 	toDoTasks.each(function(task) {
 		new ToDoView({model: task});
 	})
 });
 
 $('.submit-task').click(function() {
-	console.log("hey")
 	var newTask = new ToDoCollection;
 
-	var name = $('.task-input').val()
+	var input = $('.task-input').val();
 	
-	newTask.create({task: name})
-	new ToDoView();
+	newTask.create({task: input})
+	console.log(newTask)
+	new ToDoView({model: this.model});
 })
 
 
